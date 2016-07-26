@@ -21,7 +21,7 @@ int main()
 
 	i2c_hal_intialization(); // Initialization I2C peripherals MCU.
 
-	display_HD44780_init();
+	display_HD44780_init(); // Initialization HD44780.
 
 	bmp180_init(&CALIBRATION_DATA); // Initialization BMP180.
 
@@ -30,7 +30,7 @@ int main()
 
 	while (1)
     	{
-			bmp180_get_temperature_and_preasure(&CALIBRATION_DATA, &temperature, &pressure);
+			bmp180_get_temperature_and_preasure(&CALIBRATION_DATA, &temperature, &pressure); // Get temperature and pressure form BMP180
 
 			temp_dec = temperature/10;
 			temp_frac = temperature%10;
